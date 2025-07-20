@@ -1,0 +1,22 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod1
+  annotations:
+    description: this is my first pod
+spec:
+  containers:
+    - name: c1
+      image: ubuntu
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo hello vikram; sleep 10;done"]
+      env:
+      - name: pm
+        value: modi
+
+    - name: c2
+      image: ubuntu
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo hello saran; sleep 10;done"]
+
+    
