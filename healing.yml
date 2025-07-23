@@ -1,0 +1,24 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: healingpod
+
+spec:
+  replicas: 2
+  selector:
+      dog: terror
+  
+  template:
+    metadata:
+      labels: 
+        dog: terror
+    spec:
+      containers:
+        - name: c1
+          image: ubuntu
+          command: ["/bin/bash", "-c", "while true; do echo Helloe-sai; sleep 5; done"] 
+        - name: c2
+          image: ubuntu
+          command: ["/bin/bash", "-c", "while true; do echo Helloe-saran; sleep 5; done"]
+
+
