@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mydeployment
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      city: coimbatore
+  template:
+    metadata:
+      labels:
+        city: coimbatore
+    spec:
+      containers:
+        - name: c01
+          image: httpd
+          ports:
+            - containerPort: 80
+

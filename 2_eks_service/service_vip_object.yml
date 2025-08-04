@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demoservice
+spec:
+
+  type: NodePort
+
+  selector:
+    city: coimbatore
+
+  ports:
+    - port: 80
+      targetPort: 80
